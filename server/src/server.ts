@@ -1,13 +1,9 @@
 import express from 'express'
+import routes from './routes'
 
 const app = express()
 
 app.use(express.json())
-
-app.post('/users', (req, res) => {
-  console.log(req.body)
-
-  return res.json([{ name: 'Lucas', age: 20 }, { name: 'Emily', age: 21 }])
-})
+app.use(routes)
 
 app.listen(3030)
